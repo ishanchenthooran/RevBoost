@@ -1,0 +1,10 @@
+{
+  "include": ["."],
+  "extraPaths": ["./src"],
+  "executionEnvironments": [
+    {
+      "root": "./app",
+      "extraPaths": ["../src"]
+    }
+  ]
+}
