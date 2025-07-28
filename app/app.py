@@ -51,16 +51,23 @@ st.title("📊 RevBoost: Customer Segmentation & Churn Insights")
 
 # -------- Cluster Insights --------
 st.header("📌 Cluster Insights")
-# Remove invalid Churn_Prob values (NaN, inf, out of range)
-df = df[df['Churn_Prob'].between(0, 1)]
+
+# Ensure Churn_Prob is clean and Segment is categorical for plotting
+df = df[df['Churn_Prob'].between(0, 1)]  # Remove NaN, < 0 or > 1
+df['Segment'] = df['Segment'].astype(str)  # Categorical x-axis for boxplot
+
 fig = px.box(
-    df, 
-    x='Segment', 
-    y='Churn_Prob', 
-    color='Segment', 
-    title='Churn Probability by Segment'
+    df,
+    x='Segment',
+    y='Churn_Prob',
+    color='Segment',
+    title='Churn Probability Distribution by Segment',
+    points="all",  # Optional: shows individual data points
+    template='plotly_dark'  # Optional: enables dark theme for the plot
 )
+
 st.plotly_chart(fig, use_container_width=True)
+
 
 # -------- Top Risk Table --------
 st.header("⚠️ Top At-Risk Customers")
