@@ -30,4 +30,4 @@ Plotly Express — Visualizes cluster and churn insights
 
 dotenv — For secure API key management
 
-Git: Version control and deployment tracking.
+Git: Version control and deployment tracking
