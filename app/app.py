@@ -68,7 +68,6 @@ fig = px.box(
 
 st.plotly_chart(fig, use_container_width=True)
 
-
 # -------- Top Risk Table --------
 st.header("⚠️ Top At-Risk Customers")
 top_risk = df.sort_values('Churn_Prob', ascending=False)

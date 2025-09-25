@@ -2,10 +2,11 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
+# Load API key from .env file
 load_dotenv()
 client = OpenAI(api_key=os.getenv("REVBOOST_OPENAI_API_KEY"))
 
-def generate_summary(customer_info, temperature=0.7):
+def generate_summary(customer_info: dict, temperature: float = 0.7) -> str:
     """
     Use OpenAI to generate a summary or recommendation for a given customer profile.
 
@@ -31,10 +32,17 @@ def generate_summary(customer_info, temperature=0.7):
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
         temperature=temperature,
-        max_tokens=250
+        max_tokens=250,
     )
 
-    return response.choices[0].message.content.strip()
+    # Safely handle possible None in message.content
+    msg = response.choices[0].message
+    text = (msg.content or "").strip()
+
+    if not text:
+        raise ValueError("⚠️ OpenAI response contained no text content.")
+
+    return text
 
 # Summarizer Test
 # if __name__ == "__main__":

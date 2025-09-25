@@ -1,10 +1,11 @@
 {
   "include": ["."],
-  "extraPaths": ["./src"],
+  "python.analysis.extraPaths": ["./src"],
   "executionEnvironments": [
     {
-      "root": "./app",
-      "extraPaths": ["../src"]
+      "root": ".",
+      "extraPaths": ["./src"]
     }
   ]
 }
+
