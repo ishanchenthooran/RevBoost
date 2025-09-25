@@ -57,3 +57,6 @@ data/
 *.log
 /site
 docs/_build/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
