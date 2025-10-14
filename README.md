@@ -1,5 +1,10 @@
 # RevBoost 🚀📈
 
+<img width="2471" height="1250" alt="image" src="https://github.com/user-attachments/assets/d745edc9-5a57-4100-be2f-bf9011021520" />
+<img width="2386" height="1117" alt="image" src="https://github.com/user-attachments/assets/2c5bca5f-acd0-4ed2-83bd-e2647dfc4d25" />
+<img width="2406" height="1318" alt="image" src="https://github.com/user-attachments/assets/2f7d6cbb-36dc-476f-8786-ef6eaa7d46da" />
+
+
 ## Inspiration
 While working as a Data Engineering Intern at TD Bank, I have had the opportunity to explore customer analytics across various platforms involving recurring services and usage-based patterns. I've noticed how small shifts in engagement or service combinations could indicate broader behavioral trends — often overlooked until too late. This sparked the idea for RevBoost: a tool that combines predictive analytics with AI-generated strategies to help businesses better understand customer segments and proactively tailor their offerings. RevBoost reflects my drive to translate raw data into meaningful, actionable insights that bridge technical depth with business value.
 
