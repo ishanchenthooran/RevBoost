@@ -18,12 +18,18 @@ def generate_summary(customer_info: dict, temperature: float = 0.7) -> str:
         str: LLM-generated summary
     """
     prompt = (
-        "You're a customer retention expert.\n"
-        "Analyze the following customer profile and give:\n"
-        "- A retention strategy\n"
-        "- Any upsell opportunities\n"
-        "\nCustomer Info:\n"
-    )
+    "You're a customer success strategist at a SaaS company analyzing customer data for churn prevention and revenue expansion.\n"
+    "Use the profile below to write a short, structured strategy with 2 parts:\n\n"
+    "1) **Retention Strategy** — specific business actions to reduce churn risk, referencing contract type, tenure, and engagement level.\n"
+    "   - Mention which data signals indicate loyalty or risk.\n"
+    "   - Recommend tactical steps (e.g., personalized outreach, loyalty credits, usage-based incentives, renewal timing, customer education).\n\n"
+    "2) **Upsell Opportunities** — realistic cross-sell or upsell ideas based on spending and service usage.\n"
+    "   - Mention financial rationale and customer behavior logic.\n"
+    "   - Suggest timing or offer types (e.g., premium bundles, feature add-ons, referral programs).\n\n"
+    "Keep the tone professional yet consultative. Focus on business impact and customer lifetime value.\n"
+    "Limit total output to 6–8 sentences.\n\n"
+    f"Customer Profile:\n{customer_info}\n"
+)
 
     for key, value in customer_info.items():
         prompt += f"{key}: {value}\n"
@@ -44,14 +50,4 @@ def generate_summary(customer_info: dict, temperature: float = 0.7) -> str:
 
     return text
 
-# Summarizer Test
-# if __name__ == "__main__":
-#    test_customer = {
-#        "Segment": "2",
-#        "Tenure": "2 months",
-#        "Monthly Charges": "$80",
-#        "Total Services Used": "2",
-#        "Churn Probability": "0.91"
-#    }
-#    summary = generate_summary(test_customer)
-#    print("📌 LLM Summary:\n", summary)
+
